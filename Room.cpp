@@ -23,6 +23,10 @@ using namespace std;
                 }
             }
         }
+
+        for (int i = 0; i < (x+y)/2; i++){
+            map[rand() % y+1][rand() % x+1] = '#';
+        }
     }
 
     Room::~Room(){

@@ -8,6 +8,7 @@ class Player{
     private:
         int x;
         int y;
+        Room * room;
 
     public:
         Player();
