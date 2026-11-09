@@ -1,5 +1,6 @@
 #include "Room.h"
 #include "Player.h"
+#include "Inventory.h"
 
 Player::Player(){
     this->x = 3;
@@ -41,4 +42,14 @@ int Player::getX(){
 
 int Player::getY(){
     return y;
+}
+
+void Player::getItem(Room* r, int x, int y){
+    Item itemFromMap = r->takeItem(x,y);
+    Item* item = new Item(itemFromMap.getId(), itemFromMap.getName());
+    inventory.addItem(item);
+}
+
+std::string printInventory(){
+    return inventory.printInventory();
 }

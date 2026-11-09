@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Room.h"
 #include "Player.h"
+#include "Item.h"
 
 using namespace std;
 
@@ -12,6 +13,9 @@ int main(){
 
     Room room(60,16,player);
     room.draw();
+
+
+
 
     bool isRunning = true;
 
@@ -25,6 +29,7 @@ int main(){
         } else {
             player->move(input, &room);
             room.draw();
+            cout << player->printInventory();
         }
     }
 

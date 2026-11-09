@@ -6,16 +6,17 @@ using namespace std;
 
 class Inventory{
     private:
-        Item * items;
+        Item** items;
         int numberOfItems;
-        int size;
+        int capacity;
 
     public:
-        bool addItem(Item item);
-        bool removeItem(string id);
-        bool containsItem(string id);
+        bool addItem(Item* item);
+        bool removeItem(char id);
+        bool containsItem(char id);
         Inventory();
         ~Inventory();
+        std::string printInventory();
 };
 
 #endif

@@ -49,3 +49,13 @@ using namespace std;
     bool Room::canMove(int x, int y){
         return map[y][x] == ' ';
     }
+
+    void Room::placeItem(Item* item, int x, int y){
+        map[y][x] = item->getId();
+    }
+
+    Item Room::takeItem(int x, int y){
+        Item newItem = Item(map[y][x], Item.getNameFromId(map[y][x]));
+        map[y][x] = ' ';
+        return newItem;
+    }
