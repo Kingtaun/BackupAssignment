@@ -9,12 +9,12 @@ int main(){
 
     srand(time(0));
 
-    Player * player = new Player();
+    Player* player = new Player();
 
     Room room(60,16,player);
     room.draw();
 
-
+    room.placeItem(new Item('k', "key"), 5, 5);
 
 
     bool isRunning = true;
@@ -29,7 +29,7 @@ int main(){
         } else {
             player->move(input, &room);
             room.draw();
-            cout << player->printInventory();
+            player->printInventory();
         }
     }
 

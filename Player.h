@@ -9,15 +9,14 @@ class Player{
     private:
         int x;
         int y;
-        Room * room;
         Inventory inventory;
-        void getItem(Room* room, int x, int y);
+        void pickupItem(Room* room, int x, int y);
 
     public:
         Player();
         ~Player();
         bool move(char key, Room * room);
-        std::string printInventory();
+        void printInventory();
         int getX();
         int getY();
 

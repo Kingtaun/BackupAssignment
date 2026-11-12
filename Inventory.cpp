@@ -61,8 +61,11 @@ Inventory::~Inventory(){
     delete[] items;
 }
 
-std::string Inventory::printInventory(){
-    for (int x; x < numberOfItems; x++){
-        cout << items[]
+void Inventory::printInventory(){
+    cout << "Inventory: " << endl;
+    for (int i = 0; i < numberOfItems; i++){
+        if (items[i] != nullptr){
+            cout << items[i]->getName();
+        }
     }
 }

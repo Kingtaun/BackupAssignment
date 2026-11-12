@@ -16,10 +16,11 @@ class Room{
         Room(int x, int y, Player * player);
         ~Room();
         void draw();
-        //char tileAt(int x, int y);
+        char tileAt(int x, int y);
         bool canMove(int x, int y);
         void placeItem(Item* item, int x, int y);
         Item takeItem(int x, int y);
+        void clearTile(int x, int y);
 };
 
 #endif

@@ -25,7 +25,7 @@ using namespace std;
         }
 
         for (int i = 0; i < (x+y)/2; i++){
-            map[rand() % y+1][rand() % x+1] = '#';
+            map[rand() % y][rand() % x] = '#';
         }
     }
 
@@ -55,7 +55,15 @@ using namespace std;
     }
 
     Item Room::takeItem(int x, int y){
-        Item newItem = Item(map[y][x], Item.getNameFromId(map[y][x]));
+        Item newItem = Item(map[y][x], Item::getNameFromId(map[y][x]));
         map[y][x] = ' ';
         return newItem;
+    }
+
+    void Room::clearTile(int x, int y){
+        map[y][x] = ' ';
+    }
+
+    char Room::tileAt(int x, int y){
+        return map[y][x];
     }

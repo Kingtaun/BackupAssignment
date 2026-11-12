@@ -16,7 +16,7 @@ class Inventory{
         bool containsItem(char id);
         Inventory();
         ~Inventory();
-        std::string printInventory();
+        void printInventory();
 };
 
 #endif

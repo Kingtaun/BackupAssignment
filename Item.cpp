@@ -26,6 +26,6 @@ std::string Item::getNameFromId(char id){
         return "key";
 
     } else {
-        return "N/A"
+        return "N/A";
     }
 }
