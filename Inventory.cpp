@@ -14,6 +14,9 @@ bool Inventory::addItem(Item* item){
         items = bigger;
         capacity *= 2;
 
+        items[numberOfItems] = item;
+        numberOfItems++;
+
         return true;
 
     } else {
@@ -65,7 +68,8 @@ void Inventory::printInventory(){
     cout << "Inventory: " << endl;
     for (int i = 0; i < numberOfItems; i++){
         if (items[i] != nullptr){
-            cout << items[i]->getName();
+            cout << "[" << i << "]" << items[i]->getNameFromId(items[i]->getId()) << " ";
         }
     }
+    cout << endl;
 }

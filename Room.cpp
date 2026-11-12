@@ -24,8 +24,18 @@ using namespace std;
             }
         }
 
+        // Random walls
         for (int i = 0; i < (x+y)/2; i++){
             map[rand() % y][rand() % x] = '#';
+        }
+
+        // Random coins
+        for (int i = 0; i < (x+y)/2; i++){
+            int randX = rand() % x;
+            int randY = rand() % y;
+            if (map[randY][randX] == ' '){
+                map[randY][randX] = 'c';
+            }
         }
     }
 
@@ -47,7 +57,7 @@ using namespace std;
     }
 
     bool Room::canMove(int x, int y){
-        return map[y][x] == ' ';
+        return map[y][x] != '#';
     }
 
     void Room::placeItem(Item* item, int x, int y){

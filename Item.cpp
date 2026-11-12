@@ -25,7 +25,11 @@ std::string Item::getNameFromId(char id){
     if (id == 'k'){
         return "key";
 
+    } else if (id == 'c'){
+        return "coin";
+
     } else {
         return "N/A";
+
     }
 }

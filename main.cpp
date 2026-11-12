@@ -11,11 +11,9 @@ int main(){
 
     Player* player = new Player();
 
-    Room room(60,16,player);
+    Room room(30,8,player);
+    room.placeItem(new Item('k', "key"), 4, 4);
     room.draw();
-
-    room.placeItem(new Item('k', "key"), 5, 5);
-
 
     bool isRunning = true;
 
